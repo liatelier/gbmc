@@ -8,12 +8,12 @@
   --rule: #d5d9e2;
   --rule-strong: #16203a;
   --accent: #2b3f8c;
-  --eco: #b8730f;        /* economic */
-  --soc: #b8365f;        /* societal */
-  --env: #2a7d52;        /* environmental */
-  --eco-wash: #fbf1e1;
-  --soc-wash: #fbe7ee;
-  --env-wash: #e3f3ea;
+  --eco: #0b67a8;        /* economic */
+  --soc: #c45200;        /* societal */
+  --env: #00855f;        /* environmental */
+  --eco-wash: #e4effa;
+  --soc-wash: #fcebdf;
+  --env-wash: #dff3ec;
 
   --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --body: "Literata", Georgia, "Times New Roman", serif;
@@ -30,16 +30,16 @@
   :root:not([data-theme="light"]) {
     --paper: #10141f; --surface: #171d2c; --ink: #e8ebf2; --ink-soft: #a6aec2;
     --rule: #2c3447; --rule-strong: #c9cfdd; --accent: #8fa3f0;
-    --eco: #e3a84b; --soc: #ec7c9f; --env: #5fc08b;
-    --eco-wash: #2a2213; --soc-wash: #2c1820; --env-wash: #13261c;
+    --eco: #5eb0ec; --soc: #f2894a; --env: #33c49a;
+    --eco-wash: #12263a; --soc-wash: #2e1d12; --env-wash: #0f2a22;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #10141f; --surface: #171d2c; --ink: #e8ebf2; --ink-soft: #a6aec2;
   --rule: #2c3447; --rule-strong: #c9cfdd; --accent: #8fa3f0;
-  --eco: #e3a84b; --soc: #ec7c9f; --env: #5fc08b;
-  --eco-wash: #2a2213; --soc-wash: #2c1820; --env-wash: #13261c;
+  --eco: #5eb0ec; --soc: #f2894a; --env: #33c49a;
+  --eco-wash: #12263a; --soc-wash: #2e1d12; --env-wash: #0f2a22;
   color-scheme: dark;
 }
 
@@ -247,7 +247,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 @media print {
   html:root:not(#x) {
     --paper: #ffffff; --surface: #ffffff; --ink: #16203a; --ink-soft: #4a5470; --rule: #c9ced9; --rule-strong: #16203a;
-    --eco: #b8730f; --soc: #b8365f; --env: #2a7d52; color-scheme: light;
+    --eco: #0b67a8; --soc: #c45200; --env: #00855f; color-scheme: light;
   }
   @page { size: A4 landscape; margin: 8mm; }
   body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
