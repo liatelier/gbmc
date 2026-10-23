@@ -280,3 +280,53 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); }
 .wrap.prose { max-width: 1120px; }
 .wrap.prose > * { max-width: 68ch; }
+
+/* ---------- Phones and small tablets ---------- */
+@media screen and (max-width: 760px) {
+  /* Header: logo and language only; sections are one scroll away */
+  .top { padding-block: 14px; }
+  .top nav a:not(.lang) { display: none; }
+  .eyebrow { letter-spacing: 0.1em; font-size: 0.78rem; }
+  h1 { font-size: clamp(2.5rem, 12vw, 3.4rem); }
+  .tagline { font-size: 1.45rem; }
+  .lede { font-size: 1rem; }
+  section { padding-block: 32px; }
+  h2 { font-size: 2rem; }
+
+  /* Canvas: one column, top blocks in reading order, balance kept as pairs */
+  .canvas-scroll { overflow: visible; }
+  .scroll-hint { display: none !important; }
+  .canvas, .canvas.fill { min-width: 0; grid-template-columns: 1fr; }
+  .col, .canvas.fill .col { min-height: 0; border-right: 0; border-bottom: 2px solid var(--rule-strong); }
+  .col.split { grid-template-rows: auto auto; }
+  .blk { padding: 12px 12px; }
+  .blk-name { font-size: 1.15rem; text-align: left; }
+  .col.split .blk { min-height: 64px; }
+  .layers { grid-template-rows: none; margin: 10px -12px -12px; }
+  .layer { min-height: 44px; padding: 8px 12px; }
+  .bottom { border-top: 0; }
+  .bottom .blk { min-height: 0; padding: 12px; }
+  .bottom .blk .blk-name { font-size: 1rem; }
+
+  /* Fill-in: comfortable full-width writing areas */
+  .canvas.fill .col.split .blk { min-height: 0; }
+  .canvas.fill .layer { padding: 8px 12px 6px; }
+  .canvas.fill .bottom .blk { min-height: 0; }
+  .field textarea { min-height: 88px; font-size: 1rem; }
+  .fill-name { max-width: none; }
+  .fill-actions { width: 100%; }
+  .fill-actions button { flex: 1 1 auto; padding-block: 13px; }
+  .modes { display: flex; width: 100%; }
+  .modes button { flex: 1; padding-block: 13px; }
+
+  /* Balance table and citation */
+  .balance div { padding: 10px; font-size: 0.9rem; align-items: flex-start; }
+  .balance .sw { margin-top: 0.35em; }
+  .cite-box .copy { width: 100%; padding-block: 12px; }
+}
+
+@media screen and (max-width: 380px) {
+  .bottom { grid-template-columns: 1fr; }
+  .bottom .blk:nth-child(odd) { border-right: 0; }
+  .bottom .blk:nth-child(2) { border-top: 2px solid var(--rule-strong); }
+}
