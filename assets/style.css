@@ -296,7 +296,7 @@ header.top { border-bottom: 3px double var(--rule-strong); padding-block: 16px 1
   font-variant: small-caps; text-transform: lowercase; gap: 12px; }
 .mark-full { font-variant: small-caps; }
 .mark-short { display: none; }
-.mark svg.mark-icons { width: 70px; height: 21px; flex: none; }
+.mark-logo { width: 44px; height: 44px; flex: none; display: block; }
 .top nav { gap: 22px; align-items: center; }
 .top nav a { font-family: var(--ui); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
 .lang { border: 0; border-left: 1px solid var(--rule); border-radius: 0; padding: 0 0 0 18px; }
@@ -486,3 +486,5 @@ footer a { color: var(--ink); }
   border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); }
 .sheet-actions .primary { background: var(--ink); color: var(--paper); }
 @media print { .sheet, .sheet-backdrop { display: none !important; } }
+
+@media screen and (max-width: 760px) { .mark-logo { width: 38px; height: 38px; } }

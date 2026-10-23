@@ -9,7 +9,7 @@ Static site, no build step:
 - `assets/`: shared styles, the canvas script (explore and fill-in modes) and Martial's portrait
 - `downloads/`: blank A3 canvas PDFs in English and French
 - `sitemap.xml`, `robots.txt`, `og-image.png`
-- `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-*.png`, `site.webmanifest`: the seal logo (euro, people, leaf) for browsers and phones
+- `assets/logo.png`, `favicon.ico`, `favicon-16/32.png`, `apple-touch-icon.png`, `icon-*.png`, `site.webmanifest`: the logo for the masthead, browsers and phones
 - `llms.txt`, `llms-full.txt`: plain-text summaries for AI assistants
 - `vercel.json`: Vercel settings (trailing slashes, headers)
 - `2f215229cd975ebef4da448b035c1d29.txt`: IndexNow key for Bing
