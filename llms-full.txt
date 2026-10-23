@@ -1,0 +1,95 @@
+# Global Business Model Canvas (GBMC)
+
+Source: https://globalbusinessmodelcanvas.com/
+Creator: Martial Bombrault (Academic Director, IRIIG, Lyon, France). Canvas © IRIIG.
+Suggested citation: Bombrault, M. (2026). Global Business Model Canvas. https://globalbusinessmodelcanvas.com/
+
+## Definition
+
+The Global Business Model Canvas (GBMC) is a one-page business model framework created by Martial Bombrault. It maps how an organisation creates, delivers and captures value, and reads that value in full across three dimensions: economic, societal and environmental. "Global" means whole, not worldwide. It is not a tool for international expansion.
+
+## Origin and related frameworks
+
+- It keeps the logic of the Business Model Canvas by Alexander Osterwalder and Yves Pigneur, so anyone who knows that canvas can use it immediately.
+- The Triple Layered Business Model Canvas by Joyce and Paquin (2016) uses three separate canvases, one per dimension. The GBMC keeps all three dimensions on a single sheet, so trade-offs between them are visible side by side.
+
+## What it changes compared with the Business Model Canvas
+
+1. Customer Segments become Beneficiaries: value reaches more people than those who pay, including users, communities and the environment.
+2. Key Partners become Key Partners & Ecosystems: a business depends on networks, territories and natural systems, not only on contracted partners.
+3. Key Activities become Key Processes: the focus moves from separate tasks to end-to-end chains of activity.
+4. Partners, value propositions and beneficiaries are each read on three layers: economic, societal and environmental.
+5. Costs and revenues become a three-part balance: societal and environmental costs sit beside economic costs, each set against what the business gives back.
+
+## Layout
+
+Top row, left to right: Key Partners & Ecosystems (three layers); Key Processes above Key Resources; Value Propositions (three layers); Beneficiary Relationships above Channels; Beneficiaries (three layers).
+Lower half, three rows of two: Economic Costs | Revenue Streams; Societal & Social Costs | Contributions to Society; Environmental Costs | Environmental Contributions.
+
+## The 13 blocks
+
+### Key Partners & Ecosystems (Partenaires & Écosystèmes Clés), three layers
+The organisations, networks and territories the business works with and depends on: suppliers and investors, but also associations, schools, public bodies and the natural systems it draws on.
+Question: Who do we create value with, and which ecosystems do we belong to?
+
+### Key Processes (Processus Clés)
+The chains of activity that turn resources into value, read as end-to-end processes rather than isolated tasks.
+Question: Which processes must we master to deliver our value propositions?
+
+### Key Resources (Ressources Clés)
+The assets the model cannot work without: people, know-how, physical assets, finance, data and natural resources.
+Question: What do we need, and what do we consume, to make the model work?
+
+### Value Propositions (Propositions de Valeurs), three layers
+The value the business offers, stated three times: what it brings economically, what it brings to society, and what it brings to the environment.
+Question: What value do we create, and for whom, on each of the three levels?
+
+### Beneficiary Relationships (Relations Bénéficiaires)
+The kind of relationship the business builds and maintains with each group of beneficiaries.
+Question: How do we engage with our beneficiaries over time?
+
+### Channels (Canaux)
+How value propositions reach beneficiaries: communication, distribution and delivery.
+Question: Through which channels do our beneficiaries receive the value we create?
+
+### Beneficiaries (Bénéficiaires), three layers
+Everyone who benefits from the value created, whether or not they pay: paying customers, users, communities, and the environment itself.
+Question: Who benefits from what we do, on each of the three levels?
+
+### Economic Costs (Coûts économiques)
+The financial costs of running the model.
+Question: What does the model cost us to operate?
+
+### Revenue Streams (Flux de Revenus)
+How the business earns money from the value it creates.
+Question: What are beneficiaries willing to pay for, and how?
+
+### Societal & Social Costs (Coûts sociétaux & sociaux)
+The negative effects of the model on people and society: on employees, communities and the wider public.
+Question: What does our activity cost society?
+
+### Contributions to Society (Contributions à la société)
+The positive effects the model has on people and society beyond what is paid for.
+Question: What do we give back to society?
+
+### Environmental Costs (Coûts environnementaux)
+The pressure the model puts on the environment: emissions, resource use, waste and harm to ecosystems.
+Question: What does our activity cost the planet?
+
+### Environmental Contributions (Contributions environnementales)
+The positive effects the model has on the environment: what it avoids, restores or regenerates.
+Question: What do we give back to the environment?
+
+## Reading the balance
+
+The lower half shows the model's full result. Each row sets what the business takes against what it gives, one dimension at a time. A model can be profitable while running a deficit with society or the environment, and the canvas makes that visible at a glance.
+
+## About the creator
+
+Martial Bombrault has taught business models, strategy and entrepreneurship in French business schools for more than 25 years. He currently works at three schools: Academic Director of IRIIG (International Research Institute for Innovation & Growth), Lyon, since 2019; lead for the three MS Manager de Projet d'Innovation programmes at ITECH Lyon since 2024; lecturer in corporate strategy at EDHEC Business School since 2005. Earlier he helped bring the HEC Entrepreneurs "learning by doing" pedagogy to EDC Paris Business School and EM Normandie, taught at IDRAC for nearly eighteen years, and co-founded Vatel E-Learning.
+LinkedIn: https://www.linkedin.com/in/bombraultmartial/
+
+## En français
+
+Le Global Business Model Canvas (GBMC) est un outil de modélisation d'affaires sur une page créé par Martial Bombrault, directeur pédagogique de l'IRIIG à Lyon. Il lit un modèle d'affaires selon trois dimensions à la fois (économique, sociétale et environnementale) et met en regard les coûts économiques, sociétaux et environnementaux avec les revenus et les contributions à la société et à l'environnement. « Global » signifie complet, et non mondial.
+Page en français : https://globalbusinessmodelcanvas.com/fr/

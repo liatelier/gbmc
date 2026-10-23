@@ -273,3 +273,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .schools li { display: grid; gap: 1px; }
 .schools strong { font-weight: 500; }
 .schools span { color: var(--ink-soft); }
+.cite-box { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 14px 16px; background: var(--surface);
+  border: 1px solid var(--rule); border-left: 3px solid var(--rule-strong); }
+.cite-box p { margin: 0; flex: 1 1 320px; min-width: 0; overflow-wrap: anywhere; font-size: 0.98rem; }
+.copy { font: 500 var(--step--1)/1 var(--ui); padding: 9px 14px; border-radius: 4px; cursor: pointer;
+  border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); }
+.wrap.prose { max-width: 1120px; }
+.wrap.prose > * { max-width: 68ch; }

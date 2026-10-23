@@ -128,3 +128,15 @@
     status.textContent = fill.dataset.cleared;
   });
 })();
+
+/* Copy citation */
+document.querySelectorAll("[data-copy]").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var el = document.getElementById(btn.getAttribute("data-copy"));
+    var text = el ? el.textContent : "";
+    var label = btn.textContent;
+    function done() { btn.textContent = btn.getAttribute("data-done"); setTimeout(function () { btn.textContent = label; }, 2000); }
+    function fallback() { var r = document.createRange(); r.selectNodeContents(el); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); }
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+  });
+});

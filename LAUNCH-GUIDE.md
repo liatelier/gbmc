@@ -1,40 +1,51 @@
-# Putting globalbusinessmodelcanvas.com online
+# Getting globalbusinessmodelcanvas.com found and cited
 
-About 30 minutes, free apart from the domain.
+The site is hosted on Vercel from the GitHub repo liatelier/gbmc. Every push to `main` deploys automatically.
 
-## 1. Check the content with Martial first
+## 1. Domain on Vercel
 
-The block descriptions and guiding questions are written from the canvas itself. Ask him to read them and correct anything that doesn't match how he teaches it. Also confirm with him (and IRIIG, since the canvas carries "© IRIIG") that publishing it is fine.
+1. Vercel project → **Settings → Domains** → add `globalbusinessmodelcanvas.com` and `www.globalbusinessmodelcanvas.com`.
+2. Make the bare domain (without www) the primary one and let www redirect to it. All the page metadata points to `https://globalbusinessmodelcanvas.com/`, so this must match.
+3. Add the DNS records Vercel shows at your domain registrar. HTTPS turns on by itself.
 
-To edit text later, open `index.html` (English) or `fr/index.html` (French) in any text editor, change the words between the tags, save, and upload again.
+## 2. Google
 
-## 2. Publish the site (Netlify, free)
+1. https://search.google.com/search-console → add a **Domain** property for `globalbusinessmodelcanvas.com`, verify with the TXT record.
+2. **Sitemaps** → submit `sitemap.xml`.
+3. **URL inspection** → request indexing for `/` and `/fr/`.
+4. Check the structured data at https://search.google.com/test/rich-results with the home page URL.
 
-1. Go to https://app.netlify.com/drop and create a free account.
-2. Unzip the folder and drag the whole folder onto the page. The site goes live at a temporary address like `something.netlify.app`. Open it and check it.
-3. In Netlify: **Domain management → Add a domain** → type `globalbusinessmodelcanvas.com`.
-4. Netlify shows the DNS settings to use. Either switch your domain's nameservers to Netlify's (simplest), or add the records it lists at your registrar. HTTPS turns on automatically within an hour.
+## 3. Bing (this also feeds ChatGPT search, Copilot and DuckDuckGo)
 
-Don't delete the `/fr/` folder or `assets/`: both pages use them.
+1. https://www.bing.com/webmasters → sign in → **Import from Google Search Console** (one click once step 2 is done).
+2. Submit `sitemap.xml` there too.
+3. Notify Bing and other IndexNow engines instantly by opening this address in a browser once the site is live:
 
-## 3. Tell Google the site exists
+   https://api.indexnow.org/indexnow?url=https://globalbusinessmodelcanvas.com/&key=2f215229cd975ebef4da448b035c1d29
 
-1. Go to https://search.google.com/search-console and add a **Domain** property for `globalbusinessmodelcanvas.com`.
-2. Verify it with the TXT record Google gives you (add it in your DNS, at Netlify or your registrar).
-3. In **Sitemaps**, submit `sitemap.xml`.
-4. In **URL inspection**, enter the home page address and click **Request indexing**. Do the same for `/fr/`.
+   Do it again for `https://globalbusinessmodelcanvas.com/fr/`, and after any big content change.
 
-Expect the site to appear for "global business model canvas" within a few days to a few weeks.
+## 4. What's already on the site for AI assistants
 
-## 4. Links that make it rank (the most important step)
+- `robots.txt` explicitly allows the crawlers of Google, Bing, ChatGPT, Claude, Perplexity, Gemini, Apple, Meta, Mistral and Common Crawl.
+- `llms.txt` and `llms-full.txt` give language models a plain-text summary and the full description of every block.
+- Every page opens with a one-sentence definition, has a "How to cite" section, and carries structured data naming Martial as the creator.
+- The blank PDFs carry the title, author and site address in their metadata.
 
-Google trusts a new site faster when known sites point to it. Ask Martial to:
+## 5. What makes AI assistants cite it (the part only people can do)
 
-- Add the URL to his LinkedIn: headline or **Featured** section, and a post presenting the canvas.
-- Ask IRIIG and ITECH Lyon to link to it from his profile page or a resources page.
-- Put the URL in the footer of his course slides, next to the canvas.
-- Mention it in any article, conference talk or paper about the canvas.
+AI assistants and search engines quote what other trusted sources talk about. The site alone can't do that; these can:
 
-## 5. Keep the domain
+- **LinkedIn**: Martial adds the URL to his headline or Featured section and writes one post presenting the canvas.
+- **His schools**: IRIIG, ITECH Lyon and EDHEC link to the site from his profile or a resources page.
+- **HAL** (https://hal.science): a short paper or working paper presenting the canvas, deposited in the French open archive. It gets indexed by Google Scholar and is a source AI models trust.
+- **Course materials**: the URL in the footer of his slides and handouts, next to the canvas.
+- **Students**: theses and reports that use the canvas cite it with the citation on the site.
 
-Turn on auto-renew, and when convenient transfer the domain to Martial's own account so he controls it.
+## 6. Editing content
+
+Text lives in `index.html` (English), `fr/index.html` (French), `llms.txt` and `llms-full.txt`. When a block description changes, update all four so they stay consistent, and update the `lastmod` dates in `sitemap.xml`.
+
+## 7. Keep the domain
+
+Turn on auto-renew, and when convenient transfer the domain to Martial's own account.

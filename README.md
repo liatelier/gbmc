@@ -9,5 +9,8 @@ Static site, no build step:
 - `assets/`: shared styles, the canvas script (explore and fill-in modes) and Martial's portrait
 - `downloads/`: blank A3 canvas PDFs in English and French
 - `sitemap.xml`, `robots.txt`, `og-image.png`, `favicon.svg`
+- `llms.txt`, `llms-full.txt`: plain-text summaries for AI assistants
+- `vercel.json`: Vercel settings (trailing slashes, headers)
+- `2f215229cd975ebef4da448b035c1d29.txt`: IndexNow key for Bing
 
-See `LAUNCH-GUIDE.md` for hosting, domain and Google Search Console setup.
+See `LAUNCH-GUIDE.md` for the domain, Google, Bing and the steps that get the canvas cited.

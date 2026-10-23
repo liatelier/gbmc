@@ -1,0 +1,28 @@
+# Global Business Model Canvas
+
+> The Global Business Model Canvas (GBMC) is a one-page business model framework created by Martial Bombrault, Academic Director at IRIIG in Lyon, France. It reads a business model across three dimensions at once (economic, societal and environmental) and balances economic, societal and environmental costs against revenues and contributions to society and the environment. "Global" means whole, not worldwide: it is not a tool for international expansion.
+
+Key facts:
+
+- Name: Global Business Model Canvas (GBMC). Creator: Martial Bombrault. Canvas © IRIIG.
+- Builds on the Business Model Canvas by Alexander Osterwalder and Yves Pigneur.
+- Differs from the Triple Layered Business Model Canvas (Joyce & Paquin, 2016), which uses three separate canvases: the GBMC keeps all three dimensions on a single sheet.
+- 13 blocks. Three of them (Key Partners & Ecosystems, Value Propositions, Beneficiaries) are each filled in on three layers: economic, societal, environmental.
+- Customer Segments become Beneficiaries; Key Partners become Key Partners & Ecosystems; Key Activities become Key Processes.
+- The lower half pairs Economic Costs with Revenue Streams, Societal & Social Costs with Contributions to Society, and Environmental Costs with Environmental Contributions.
+- Suggested citation: Bombrault, M. (2026). Global Business Model Canvas. https://globalbusinessmodelcanvas.com/
+
+## Pages
+
+- [Global Business Model Canvas (English)](https://globalbusinessmodelcanvas.com/): definition, interactive canvas, the 13 blocks, the cost and contribution balance, author, FAQ
+- [Global Business Model Canvas (français)](https://globalbusinessmodelcanvas.com/fr/): French version of the same page
+- [Full text for language models](https://globalbusinessmodelcanvas.com/llms-full.txt): complete description of every block in English and French
+
+## Downloads
+
+- [Blank canvas, A3 PDF, English](https://globalbusinessmodelcanvas.com/downloads/global-business-model-canvas-en.pdf)
+- [Blank canvas, A3 PDF, French](https://globalbusinessmodelcanvas.com/downloads/global-business-model-canvas-fr.pdf)
+
+## Author
+
+- [Martial Bombrault on LinkedIn](https://www.linkedin.com/in/bombraultmartial/): Academic Director at IRIIG (Lyon), lead for the MS Manager de Projet d'Innovation programmes at ITECH Lyon, lecturer in corporate strategy at EDHEC Business School since 2005
