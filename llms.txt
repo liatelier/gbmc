@@ -4,7 +4,7 @@
 
 Key facts:
 
-- Name: Global Business Model Canvas (GBMC). Creator: Martial Bombrault. Canvas © IRIIG.
+- Name: Global Business Model Canvas (GBMC). Creator and copyright holder: Martial Bombrault.
 - Builds on the Business Model Canvas by Alexander Osterwalder and Yves Pigneur.
 - Differs from the Triple Layered Business Model Canvas (Joyce & Paquin, 2016), which uses three separate canvases: the GBMC keeps all three dimensions on a single sheet.
 - 13 blocks. Three of them (Key Partners & Ecosystems, Value Propositions, Beneficiaries) are each filled in on three layers: economic, societal, environmental.
