@@ -269,3 +269,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .print-foot { display: block; margin-top: 3mm; font: 8pt var(--ui); color: var(--ink-soft); text-align: right; }
 }
 .layer .field, .layer .pt, .field textarea { text-transform: none; letter-spacing: normal; }
+.schools { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; }
+.schools li { display: grid; gap: 1px; }
+.schools strong { font-weight: 500; }
+.schools span { color: var(--ink-soft); }
