@@ -296,7 +296,7 @@ header.top { border-bottom: 3px double var(--rule-strong); padding-block: 16px 1
   font-variant: small-caps; text-transform: lowercase; gap: 12px; }
 .mark-full { font-variant: small-caps; }
 .mark-short { display: none; }
-.mark svg { width: 24px; height: 24px; }
+.mark svg.mark-icons { width: 70px; height: 21px; flex: none; }
 .top nav { gap: 22px; align-items: center; }
 .top nav a { font-family: var(--ui); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
 .lang { border: 0; border-left: 1px solid var(--rule); border-radius: 0; padding: 0 0 0 18px; }
