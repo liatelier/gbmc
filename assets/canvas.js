@@ -43,7 +43,7 @@
     return q ? q.textContent : "";
   }
 
-  function makeField(label, placeholder) {
+  function makeField(label, placeholder, question, dim) {
     var wrap = document.createElement("span");
     wrap.className = "field";
     var ta = document.createElement("textarea");
@@ -58,7 +58,8 @@
     var value = (saved.fields && saved.fields[index]) || "";
     ta.value = value; pt.textContent = value;
     ta.addEventListener("input", function () { pt.textContent = ta.value; save(); });
-    fields.push({ ta: ta, pt: pt });
+    ta.dataset.index = index;
+    fields.push({ ta: ta, pt: pt, label: label, q: question, dim: dim });
     return wrap;
   }
 
@@ -81,16 +82,85 @@
         var l = document.createElement("span");
         l.className = "lname"; l.textContent = lname;
         layer.appendChild(l);
-        layer.appendChild(makeField(name + " – " + lname, ""));
+        var dim = ["eco", "soc", "env"].filter(function (d) { return layer.classList.contains(d); })[0];
+        layer.appendChild(makeField(name + " – " + lname, "", question, dim));
       });
       layers.querySelector(".layer .field textarea").placeholder = question;
       div.appendChild(layers);
     } else {
-      div.appendChild(makeField(name, question));
+      var bdim = ["eco", "soc", "env"].filter(function (d) { return a.classList.contains(d); })[0];
+      div.appendChild(makeField(name, question, question, bdim));
     }
     a.replaceWith(div);
   });
   fillHost.appendChild(clone);
+
+  /* Writing panel for phones: the grid keeps its shape, tapping a cell opens a full-width editor */
+  var phone = window.matchMedia("(max-width: 760px)");
+  var backdrop = document.createElement("div");
+  backdrop.className = "sheet-backdrop"; backdrop.hidden = true;
+  var sheet = document.createElement("div");
+  sheet.className = "sheet"; sheet.hidden = true;
+  sheet.setAttribute("role", "dialog"); sheet.setAttribute("aria-modal", "true");
+  sheet.innerHTML = '<p class="sheet-label"><span class="sw"></span><span class="sheet-name"></span></p>' +
+    '<p class="sheet-q"></p><textarea id="sheet-text"></textarea>' +
+    '<div class="sheet-actions"><button type="button" class="sheet-next"></button><button type="button" class="primary sheet-done"></button></div>';
+  document.body.appendChild(backdrop); document.body.appendChild(sheet);
+  var sheetText = sheet.querySelector("textarea");
+  var sheetName = sheet.querySelector(".sheet-name");
+  var sheetQ = sheet.querySelector(".sheet-q");
+  var sheetSw = sheet.querySelector(".sw");
+  var nextBtn = sheet.querySelector(".sheet-next");
+  var doneBtn = sheet.querySelector(".sheet-done");
+  nextBtn.textContent = fill.dataset.sheetNext || "Next";
+  doneBtn.textContent = fill.dataset.sheetDone || "Done";
+  sheet.setAttribute("aria-labelledby", "sheet-name");
+  sheetName.id = "sheet-name";
+  var current = -1;
+
+  function openSheet(i) {
+    current = i;
+    var f = fields[i];
+    sheetName.textContent = f.label;
+    sheetQ.textContent = f.q || "";
+    sheetQ.hidden = !f.q;
+    sheetSw.hidden = !f.dim;
+    if (f.dim) sheetSw.style.background = "var(--" + f.dim + ")";
+    sheetText.value = f.ta.value;
+    sheetText.setAttribute("aria-label", f.label);
+    nextBtn.hidden = i >= fields.length - 1;
+    backdrop.hidden = false; sheet.hidden = false;
+    sheetText.focus();
+  }
+  function closeSheet() {
+    var f = fields[current];
+    sheet.hidden = true; backdrop.hidden = true;
+    if (f) f.ta.focus({ preventScroll: true });
+    current = -1;
+  }
+  sheetText.addEventListener("input", function () {
+    var f = fields[current];
+    if (!f) return;
+    f.ta.value = sheetText.value;
+    f.ta.dispatchEvent(new Event("input"));
+  });
+  doneBtn.addEventListener("click", closeSheet);
+  backdrop.addEventListener("click", closeSheet);
+  nextBtn.addEventListener("click", function () { openSheet(current + 1); });
+  sheet.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSheet(); });
+
+  function applyPhone() {
+    fields.forEach(function (f) { f.ta.readOnly = phone.matches; });
+    if (!phone.matches && current >= 0) closeSheet();
+  }
+  fields.forEach(function (f, i) {
+    f.ta.addEventListener("click", function () { if (phone.matches) openSheet(i); });
+    f.ta.addEventListener("keydown", function (e) {
+      if (phone.matches && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openSheet(i); }
+    });
+  });
+  if (phone.addEventListener) phone.addEventListener("change", applyPhone); else phone.addListener(applyPhone);
+  applyPhone();
 
   nameInput.value = saved.name || "";
   printName.textContent = nameInput.value;

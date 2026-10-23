@@ -293,26 +293,38 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   section { padding-block: 32px; }
   h2 { font-size: 2rem; }
 
-  /* Canvas: one column, top blocks in reading order, balance kept as pairs */
+  /* Canvas keeps its grid: everything scales down to the screen width */
   .canvas-scroll { overflow: visible; }
   .scroll-hint { display: none !important; }
-  .canvas, .canvas.fill { min-width: 0; grid-template-columns: 1fr; }
-  .col, .canvas.fill .col { min-height: 0; border-right: 0; border-bottom: 2px solid var(--rule-strong); }
-  .col.split { grid-template-rows: auto auto; }
-  .blk { padding: 12px 12px; }
-  .blk-name { font-size: 1.15rem; text-align: left; }
-  .col.split .blk { min-height: 64px; }
-  .layers { grid-template-rows: none; margin: 10px -12px -12px; }
-  .layer { min-height: 44px; padding: 8px 12px; }
-  .bottom { border-top: 0; }
-  .bottom .blk { min-height: 0; padding: 12px; }
-  .bottom .blk .blk-name { font-size: 1rem; }
+  .canvas, .canvas.fill { min-width: 0; grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr; border-width: 1.5px; }
+  .col { min-height: 300px; border-right-width: 1.5px; }
+  .canvas.fill .col { min-height: 420px; }
+  .col.split > .blk + .blk, .bottom, .bottom .blk { border-top-width: 1.5px; }
+  .bottom .blk:nth-child(odd) { border-right-width: 1.5px; }
+  .blk { padding: 6px 4px; min-width: 0; }
+  .blk-name { font-size: 0.68rem; line-height: 1.12; overflow-wrap: anywhere; hyphens: auto; }
+  .layers, .canvas.fill .layers { margin: 6px -4px -6px; }
+  .layer { gap: 4px; padding: 4px; min-width: 0; }
+  .layer::before { width: 3px; }
+  .canvas:not(.fill) .layer { font-size: 0; letter-spacing: 0; }
+  .canvas:not(.fill) .layer::after, .canvas.fill .lname::after { font-size: 0.56rem; letter-spacing: 0.04em; }
+  .canvas.fill .lname { font-size: 0; letter-spacing: 0; }
+  .canvas:not(.fill) .layer.eco::after, .layer.eco .lname::after { content: "Econ."; }
+  .canvas:not(.fill) .layer.soc::after, .layer.soc .lname::after { content: "Soc."; }
+  .canvas:not(.fill) .layer.env::after, .layer.env .lname::after { content: "Env."; }
+  :lang(fr) .canvas:not(.fill) .layer.eco::after, :lang(fr) .layer.eco .lname::after { content: "Éco."; }
+  :lang(fr) .canvas:not(.fill) .layer.soc::after, :lang(fr) .layer.soc .lname::after { content: "Soc."; }
+  :lang(fr) .canvas:not(.fill) .layer.env::after, :lang(fr) .layer.env .lname::after { content: "Env."; }
+  .canvas.fill .layer { padding: 4px 4px 2px; column-gap: 4px; grid-template-columns: 3px minmax(0, 1fr); }
+  .bottom .blk { min-height: 46px; padding: 6px; }
+  .canvas.fill .bottom .blk { min-height: 64px; }
+  .bottom .blk .blk-name { font-size: 0.68rem; }
+  .bottom .blk .blk-name::before { width: 7px; height: 7px; margin-right: 4px; }
 
-  /* Fill-in: comfortable full-width writing areas */
-  .canvas.fill .col.split .blk { min-height: 0; }
-  .canvas.fill .layer { padding: 8px 12px 6px; }
-  .canvas.fill .bottom .blk { min-height: 0; }
-  .field textarea { min-height: 88px; font-size: 1rem; }
+  /* Fill-in on phones: cells show the notes, tapping one opens the writing panel */
+  .field textarea { min-height: 0; padding: 2px; font-size: 0.6rem; line-height: 1.25; background: var(--paper); cursor: pointer; }
+  .field textarea::placeholder { color: transparent; }
+  .canvas.fill .blk > .field { min-height: 28px; }
   .fill-name { max-width: none; }
   .fill-actions { width: 100%; }
   .fill-actions button { flex: 1 1 auto; padding-block: 13px; }
@@ -325,8 +337,22 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .cite-box .copy { width: 100%; padding-block: 12px; }
 }
 
-@media screen and (max-width: 380px) {
-  .bottom { grid-template-columns: 1fr; }
-  .bottom .blk:nth-child(odd) { border-right: 0; }
-  .bottom .blk:nth-child(2) { border-top: 2px solid var(--rule-strong); }
-}
+
+
+/* Writing panel (phones, fill-in mode) */
+.sheet-backdrop { position: fixed; inset: 0; background: rgba(10, 14, 25, 0.45); z-index: 40; }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 41; background: var(--surface); color: var(--ink);
+  border-top: 2px solid var(--rule-strong); border-radius: 12px 12px 0 0; display: grid; gap: 10px;
+  padding: 16px max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  max-height: 85vh; font-family: var(--ui); }
+.sheet-label { font: 600 1.2rem/1.15 var(--display); margin: 0; display: flex; align-items: center; gap: 8px; }
+.sheet-label .sw { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.sheet-q { margin: 0; font-style: italic; color: var(--ink-soft); font-size: 0.92rem; }
+.sheet textarea { width: 100%; min-height: 34vh; resize: none; border: 1px solid var(--rule-strong); border-radius: 6px; padding: 10px;
+  font: 400 1rem/1.45 var(--ui); background: var(--paper); color: var(--ink); }
+.sheet textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.sheet-actions { display: flex; gap: 8px; }
+.sheet-actions button { flex: 1; font: 500 1rem/1 var(--ui); padding: 14px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink); }
+.sheet-actions .primary { background: var(--ink); color: var(--paper); }
+@media print { .sheet, .sheet-backdrop { display: none !important; } }
