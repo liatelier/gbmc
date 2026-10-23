@@ -6,7 +6,8 @@ Static site, no build step:
 
 - `index.html`: English page
 - `fr/index.html`: French page
-- `assets/`: shared styles and the canvas script
+- `assets/`: shared styles, the canvas script (explore and fill-in modes) and Martial's portrait
+- `downloads/`: blank A3 canvas PDFs in English and French
 - `sitemap.xml`, `robots.txt`, `og-image.png`, `favicon.svg`
 
 See `LAUNCH-GUIDE.md` for hosting, domain and Google Search Console setup.

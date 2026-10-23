@@ -80,19 +80,23 @@
     <h1>Global Business Model Canvas</h1>
     <p class="tagline">Un canvas, trois dimensions : <span class="e">économique</span>, <span class="s">sociétale</span>, <span class="v">environnementale</span>.</p>
     <p class="lede">Le Global Business Model Canvas représente sur une seule page la façon dont une organisation crée, délivre et capte de la valeur, et lit cette valeur dans sa totalité. Global au sens de <em>complet</em>, et non de mondial : chaque bloc clé est examiné pour ce qu'il signifie pour l'économie de l'entreprise, pour la société et pour l'environnement.</p>
-    <p class="byline">Créé par <strong>Martial Bombrault</strong>, directeur pédagogique de l'IRIIG, Lyon</p>
+    <p class="byline"><img class="avatar" src="/assets/martial-bombrault-avatar.jpg" alt="" width="40" height="40"><span>Créé par <strong>Martial Bombrault</strong>, directeur pédagogique de l'IRIIG, Lyon</span></p>
   </div>
 
   <section id="canvas" class="canvas-section" aria-labelledby="canvas-title">
     <div class="wrap">
       <h2 id="canvas-title" class="prose">Le canvas</h2>
-      <div class="filters" role="group" aria-label="Mettre une dimension en évidence">
+      <div class="modes" role="group" aria-label="Mode du canvas">
+        <button type="button" data-target="explore" aria-pressed="true">Explorer le canvas</button>
+        <button type="button" data-target="fill" aria-pressed="false">Remplir le vôtre</button>
+      </div>
+      <div class="filters" data-mode="explore" role="group" aria-label="Mettre une dimension en évidence">
         <button type="button" data-dim="all" aria-pressed="true"><span class="dot"></span>Toutes les dimensions</button>
         <button type="button" data-dim="eco" aria-pressed="false"><span class="dot"></span>Économique</button>
         <button type="button" data-dim="soc" aria-pressed="false"><span class="dot"></span>Sociétale</button>
         <button type="button" data-dim="env" aria-pressed="false"><span class="dot"></span>Environnementale</button>
       </div>
-      <div class="canvas-scroll">
+      <div class="canvas-scroll" data-mode="explore">
         <div class="canvas" role="img" aria-label="Le Global Business Model Canvas : cinq colonnes (Partenaires et Écosystèmes Clés ; Processus Clés et Ressources Clés ; Propositions de Valeurs ; Relations Bénéficiaires et Canaux ; Bénéficiaires) au-dessus de trois lignes qui mettent en regard coûts économiques et flux de revenus, coûts sociétaux et sociaux et contributions à la société, coûts environnementaux et contributions environnementales.">
           <div class="col">
             <a class="blk" href="#partenaires"><span class="blk-name">Partenaires &amp; Écosystèmes Clés</span>
@@ -124,7 +128,22 @@
           </div>
         </div>
       </div>
-      <p class="canvas-note">Sélectionnez un bloc pour lire ce qu'il recouvre. <span class="scroll-hint">Faites glisser pour voir tout le canvas.</span></p>
+      <p class="canvas-note" data-mode="explore">Sélectionnez un bloc pour lire ce qu'il recouvre. <span class="scroll-hint">Faites glisser pour voir tout le canvas.</span></p>
+      <div id="fill" data-mode="fill" hidden data-saved="Enregistré dans ce navigateur" data-cleared="Canvas effacé" data-confirm="Cliquez à nouveau pour tout effacer">
+        <div class="fill-bar">
+          <label class="fill-name"><span>Entreprise ou projet</span>
+            <input id="fill-name" type="text" placeholder="Nommez votre modèle d'affaires" autocomplete="off"></label>
+          <div class="fill-actions">
+            <button type="button" id="fill-print" class="primary">Enregistrer en PDF ou imprimer</button>
+            <button type="button" id="fill-clear">Effacer le canvas</button>
+          </div>
+        </div>
+        <div class="print-head"><span class="print-title">Global Business Model Canvas</span><span class="print-project">Entreprise ou projet : <span class="print-name"></span></span></div>
+        <div id="fill-canvas" class="canvas-scroll"></div>
+        <div class="print-foot">globalbusinessmodelcanvas.com · Global Business Model Canvas de Martial Bombrault · © IRIIG</div>
+        <p class="canvas-note">Vos notes restent dans ce navigateur et ne sont envoyées nulle part. <span id="fill-status" role="status"></span></p>
+      </div>
+      <p class="downloads">Canvas vierge pour vos ateliers : <a href="/downloads/global-business-model-canvas-fr.pdf" download>PDF A3, français</a> · <a href="/downloads/global-business-model-canvas-en.pdf" download hreflang="en">PDF A3, English</a></p>
     </div>
   </section>
 
@@ -277,13 +296,16 @@
         <p>Auparavant, il a déployé la pédagogie « learning by doing » d'HEC Entrepreneurs à l'EDC Paris Business School et à l'EM Normandie, enseigné les business models et la stratégie à l'IDRAC pendant près de dix-huit ans, et cofondé Vatel E-Learning. Son travail porte sur l'ingénierie de formation, la pédagogie digitale et l'innovation pédagogique.</p>
         <p><a href="https://www.linkedin.com/in/bombraultmartial/" rel="me noopener" target="_blank">Contacter Martial Bombrault sur LinkedIn</a></p>
       </div>
-      <dl class="facts">
+      <div class="author-side">
+        <img class="portrait" src="/assets/martial-bombrault.jpg" alt="Portrait de Martial Bombrault" width="640" height="640" loading="lazy">
+        <dl class="facts">
         <div><dt>Fonction</dt><dd>Directeur pédagogique, IRIIG</dd></div>
         <div><dt>Programmes</dt><dd>MS Manager de Projet d'Innovation, ITECH Lyon</dd></div>
         <div><dt>Enseignement</dt><dd>EDHEC Business School, depuis 2005</dd></div>
         <div><dt>Domaines</dt><dd>Business models, stratégie, entrepreneuriat, ingénierie de formation</dd></div>
         <div><dt>Basé à</dt><dd>Lyon, France</dd></div>
       </dl>
+      </div>
     </div>
   </section>
 

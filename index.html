@@ -40,6 +40,7 @@
       "@type": "Person",
       "@id": "https://globalbusinessmodelcanvas.com/#martial-bombrault",
       "name": "Martial Bombrault",
+      "image": "https://globalbusinessmodelcanvas.com/assets/martial-bombrault.jpg",
       "jobTitle": "Academic Director",
       "worksFor": {"@type": "EducationalOrganization", "name": "IRIIG – International Research Institute for Innovation & Growth", "url": "https://www.iriig.com"},
       "address": {"@type": "PostalAddress", "addressLocality": "Lyon", "addressCountry": "FR"},
@@ -97,19 +98,23 @@
     <h1>Global Business Model Canvas</h1>
     <p class="tagline">One canvas, three dimensions: <span class="e">economic</span>, <span class="s">societal</span>, <span class="v">environmental</span>.</p>
     <p class="lede">The Global Business Model Canvas maps how an organisation creates, delivers and captures value on a single page, and reads that value in full. Global as in <em>whole</em>, not as in worldwide: every key block is examined for what it means for the economy of the business, for society, and for the environment.</p>
-    <p class="byline">Created by <strong>Martial Bombrault</strong>, Academic Director at IRIIG, Lyon</p>
+    <p class="byline"><img class="avatar" src="/assets/martial-bombrault-avatar.jpg" alt="" width="40" height="40"><span>Created by <strong>Martial Bombrault</strong>, Academic Director at IRIIG, Lyon</span></p>
   </div>
 
   <section id="canvas" class="canvas-section" aria-labelledby="canvas-title">
     <div class="wrap">
       <h2 id="canvas-title" class="prose">The canvas</h2>
-      <div class="filters" role="group" aria-label="Highlight a dimension">
+      <div class="modes" role="group" aria-label="Canvas mode">
+        <button type="button" data-target="explore" aria-pressed="true">Explore the canvas</button>
+        <button type="button" data-target="fill" aria-pressed="false">Fill in your own</button>
+      </div>
+      <div class="filters" data-mode="explore" role="group" aria-label="Highlight a dimension">
         <button type="button" data-dim="all" aria-pressed="true"><span class="dot"></span>All dimensions</button>
         <button type="button" data-dim="eco" aria-pressed="false"><span class="dot"></span>Economic</button>
         <button type="button" data-dim="soc" aria-pressed="false"><span class="dot"></span>Societal</button>
         <button type="button" data-dim="env" aria-pressed="false"><span class="dot"></span>Environmental</button>
       </div>
-      <div class="canvas-scroll">
+      <div class="canvas-scroll" data-mode="explore">
         <div class="canvas" role="img" aria-label="The Global Business Model Canvas: five columns (Key Partners and Ecosystems; Key Processes and Key Resources; Value Propositions; Beneficiary Relationships and Channels; Beneficiaries) above three rows pairing economic costs with revenue streams, societal and social costs with contributions to society, and environmental costs with environmental contributions.">
           <div class="col">
             <a class="blk" href="#partners"><span class="blk-name">Key Partners &amp; Ecosystems</span>
@@ -141,7 +146,22 @@
           </div>
         </div>
       </div>
-      <p class="canvas-note">Select a block to read what it covers. <span class="scroll-hint">Swipe sideways to see the whole canvas.</span></p>
+      <p class="canvas-note" data-mode="explore">Select a block to read what it covers. <span class="scroll-hint">Swipe sideways to see the whole canvas.</span></p>
+      <div id="fill" data-mode="fill" hidden data-saved="Saved in this browser" data-cleared="Canvas cleared" data-confirm="Click again to clear everything">
+        <div class="fill-bar">
+          <label class="fill-name"><span>Business or project</span>
+            <input id="fill-name" type="text" placeholder="Name your business model" autocomplete="off"></label>
+          <div class="fill-actions">
+            <button type="button" id="fill-print" class="primary">Save as PDF or print</button>
+            <button type="button" id="fill-clear">Clear canvas</button>
+          </div>
+        </div>
+        <div class="print-head"><span class="print-title">Global Business Model Canvas</span><span class="print-project">Business or project: <span class="print-name"></span></span></div>
+        <div id="fill-canvas" class="canvas-scroll"></div>
+        <div class="print-foot">globalbusinessmodelcanvas.com · Global Business Model Canvas by Martial Bombrault · © IRIIG</div>
+        <p class="canvas-note">Your notes stay in this browser and are never sent anywhere. <span id="fill-status" role="status"></span></p>
+      </div>
+      <p class="downloads">Blank canvas for workshops: <a href="/downloads/global-business-model-canvas-en.pdf" download>A3 PDF, English</a> · <a href="/downloads/global-business-model-canvas-fr.pdf" download hreflang="fr">A3 PDF, français</a></p>
     </div>
   </section>
 
@@ -294,13 +314,16 @@
         <p>Earlier, he helped bring the "learning by doing" pedagogy of HEC Entrepreneurs to EDC Paris Business School and EM Normandie, taught business models and strategy at IDRAC for nearly eighteen years, and co-founded Vatel E-Learning. His work focuses on training design, digital learning and innovation in teaching.</p>
         <p><a href="https://www.linkedin.com/in/bombraultmartial/" rel="me noopener" target="_blank">Contact Martial Bombrault on LinkedIn</a></p>
       </div>
-      <dl class="facts">
+      <div class="author-side">
+        <img class="portrait" src="/assets/martial-bombrault.jpg" alt="Portrait of Martial Bombrault" width="640" height="640" loading="lazy">
+        <dl class="facts">
         <div><dt>Role</dt><dd>Academic Director, IRIIG</dd></div>
         <div><dt>Programmes</dt><dd>MS Manager de Projet d'Innovation, ITECH Lyon</dd></div>
         <div><dt>Teaching</dt><dd>EDHEC Business School, since 2005</dd></div>
         <div><dt>Fields</dt><dd>Business models, strategy, entrepreneurship, training design</dd></div>
         <div><dt>Based in</dt><dd>Lyon, France</dd></div>
       </dl>
+      </div>
     </div>
   </section>
 
